@@ -30,6 +30,18 @@ const app = express()
 //Below will link to the public folder and its content.
 app.use(express.static(join(__dirname, 'Public')))
 
+const users = [
+  {
+    name: 'John Doe',
+  },
+  {
+    name: 'Jane Doe',
+  },
+  {
+    name: 'Jack Doe'
+  }
+]
+
 
 
 
