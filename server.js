@@ -58,7 +58,7 @@ const users = [
 //http://localhost:3000/user/John Doe
 app.get('/user/:name', (req,res) => {
   const name = req.params.name 
-  const user = users.filter(user => user.name ===)[0]
+  const user = users.filter(user => user.name === name)[0]
 
   res.json(user)
 })
