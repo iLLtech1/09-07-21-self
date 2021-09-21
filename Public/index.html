@@ -11,10 +11,27 @@
 </head>
 <body>
   
-  <h1>Count: <span id="count">0</span></h1>
+  <!-- START: button for click counter -->
+  <!-- <h1>Count: <span id="count">0</span></h1>
   <button id="increment">Click Me</button>
-  <a href="./test.html">Test Page</a>
+  <a href="./test.html">Test Page</a> -->
+  <!-- button for click counter end -->
 
+    <!-- START: div for html render on app.js -->
+    <!-- <div id="users"></div> -->
+    <!-- end -->
+
+    <!-- START: search for user button. This is attached to the server js -->
+    <form>
+      <p>
+        <label for+"search">search</label>
+        <input type="text" name="search" id="search">
+      </p>
+      <button id="getUser">Find User</button>
+    </form>
+    <!-- end -->
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="./app.js"></script>
 
 </body>

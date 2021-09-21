@@ -33,16 +33,42 @@ app.use(express.static(join(__dirname, 'Public')))
 const users = [
   {
     name: 'John Doe',
+    age: 47
   },
   {
     name: 'Jane Doe',
+    age: 48
   },
   {
-    name: 'Jack Doe'
+    name: 'Jack Doe',
+    age: 49
   }
 ]
+// START: to retrieve individual user information using query WK6DY1&2 00:53:00
+// http://localhost:3000/user?name=John Doe
+// app.get('/user', (req, res) => {
+//   const name = req.query.name 
+//   const user = users.filter(user => user.name === name)[0]
+
+//   res.json(user)
+// })
+//end
+
+//start Now we will get data using Parameters instead of Query
+//http://localhost:3000/user/John Doe
+app.get('/user/:name', (req,res) => {
+  const name = req.params.name 
+  const user = users.filter(user => user.name ===)[0]
+
+  res.json(user)
+})
 
 
+//START: The below get method is used to grab the array of users info, then we use res.json to send back the JS to the front end.
+// app.get('/users', (req, res) => {
+//   res.json(users)
+// })
+//end
 
 
 //turn the server on and setting it to listen to events. This utilizes Local.host and port 3000
