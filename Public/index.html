@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./assets/CSS/style.css">
 
   <title>Document</title>
 </head>
@@ -21,6 +21,19 @@
     <!-- <div id="users"></div> -->
     <!-- end -->
 
+    <!-- Create a form for users -->
+    <form>
+      <p>
+        <label for="name">name</label>
+        <input type="text" name="name" id="name">
+      </p>
+      <p>
+        <label for="age">age</label>
+        <input type="number" name="age" id="age">
+      </p>
+      <button id="addUser">Create User</button>
+    </form>
+
     <!-- START: search for user button. This is attached to the server js -->
     <form>
       <p>
@@ -32,7 +45,7 @@
     <!-- end -->
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="./app.js"></script>
+  <script src="./assets/JS/app.js"></script>
 
 </body>
 </html>

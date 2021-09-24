@@ -29,19 +29,35 @@ const app = express()
 //start
 //Below will link to the public folder and its content.
 app.use(express.static(join(__dirname, 'Public')))
+//end
 
-const users = [
+//Start: Express URL encoding
+app.use(express.urlencoded({ extended: true}))
+
+//Start: Send JSON data from the Front End to the Back End
+app.use(express.json())
+
+
+// const users = [
+//   {
+//     name: 'John Doe',
+//     age: 47
+//   },
+//   {
+//     name: 'Jane Doe',
+//     age: 48
+//   },
+//   {
+//     name: 'Jack Doe',
+//     age: 49
+//   }
+// ]
+
+//watch WK6DY2&2 @ 02:20:00
+const movieData = [
   {
-    name: 'John Doe',
-    age: 47
-  },
-  {
-    name: 'Jane Doe',
-    age: 48
-  },
-  {
-    name: 'Jack Doe',
-    age: 49
+    title: '',
+    plot: ''
   }
 ]
 // START: to retrieve individual user information using query WK6DY1&2 00:53:00
@@ -54,14 +70,29 @@ const users = [
 // })
 //end
 
+//Create a post Route for Users
+// app.post('/user', (req, res) => {
+//   // console.log(req.body)
+//   users.push(req.body)
+//   res.sendStatus(200)
+// })
+
+//Create a post Route for Movies
+app.post('/movies', (req, res) => {
+  const titleSearched = req.params.searchMovie 
+  const movieFound = movieData.filter(movie => movietitle === titleSearched)[0]
+
+  res.json(movieFound)
+})
+
 //start Now we will get data using Parameters instead of Query
 //http://localhost:3000/user/John Doe
-app.get('/user/:name', (req,res) => {
-  const name = req.params.name 
-  const user = users.filter(user => user.name === name)[0]
+// app.get('/user/:name', (req,res) => {
+//   const name = req.params.name 
+//   const user = users.filter(user => user.name === name)[0]
 
-  res.json(user)
-})
+//   res.json(user)
+// })
 
 
 //START: The below get method is used to grab the array of users info, then we use res.json to send back the JS to the front end.
